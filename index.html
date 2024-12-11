@@ -14,14 +14,42 @@
             background: linear-gradient(135deg, #1a1a1a, #3b0000);
             overflow: hidden;
             font-family: 'Arial', sans-serif;
+            flex-direction: column;
+            text-align: center;
         }
         h1 {
             font-size: 4em;
             color: #ff3333;
             text-shadow: 0 0 10px #ff3333, 0 0 20px #ff5555, 0 0 30px #ff3333;
-            animation: glow 2s infinite;
+            animation: glow-effect 2s infinite;
         }
-        @keyframes glow {
+        p.supported-games {
+            font-size: 1.2em;
+            color: #ff9999;
+            margin-top: 15px;
+            text-shadow: 0 0 5px #ff3333;
+        }
+        .gallery {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            border: 2px solid #ff3333;
+            box-shadow: 0 0 10px #ff3333;
+        }
+        .video-container {
+            margin-top: 30px;
+        }
+        video {
+            width: 80%;
+            border: 3px solid #ff3333;
+            box-shadow: 0 0 20px #ff5555;
+        }
+        @keyframes glow-effect {
             0% {
                 text-shadow: 0 0 10px #ff3333, 0 0 20px #ff5555, 0 0 30px #ff3333;
             }
@@ -32,10 +60,10 @@
                 text-shadow: 0 0 10px #ff3333, 0 0 20px #ff5555, 0 0 30px #ff3333;
             }
         }
-        .animation-container {
+        .dynamic-background {
             position: relative;
         }
-        .animation-container:before {
+        .dynamic-background:before {
             content: '';
             position: absolute;
             top: 0;
@@ -44,9 +72,9 @@
             height: 100%;
             background: radial-gradient(circle, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
             filter: blur(20px);
-            animation: pulse 3s infinite;
+            animation: pulse-effect 3s infinite;
         }
-        @keyframes pulse {
+        @keyframes pulse-effect {
             0%, 100% {
                 opacity: 0.6;
             }
@@ -57,8 +85,21 @@
     </style>
 </head>
 <body>
-    <div class="animation-container">
+    <div class="dynamic-background">
         <h1>Coming Soon</h1>
+        <p class="supported-games">Fonctionne avec Fortnite, Apex, Call of Duty et bien plus encore...</p>
+        <div class="gallery">
+            <img src="image1.jpg" alt="Image 1">
+            <img src="image2.jpg" alt="Image 2">
+            <img src="image3.jpg" alt="Image 3">
+            <img src="image4.jpg" alt="Image 4">
+        </div>
+        <div class="video-container">
+            <video controls>
+                <source src="gameplay.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
 </body>
 </html>
